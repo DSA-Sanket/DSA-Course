@@ -1,0 +1,50 @@
+git config --global user.name "name"
+git config --global user.email "email"
+git config --global --edit      // to change the config file
+
+git init
+
+git add .
+
+git commit -m "Fierst commite"
+
+git status
+
+git push
+
+git checkout b.N.
+
+git log            //commits log
+
+
+
+
+
+
+git branch B.N.     // crete branch
+
+git checkout -b B.N.   // create branch and checkout too
+
+To merge checkout to develop then fire a cmd to merge new b to dev
+
+git merge B.N.
+
+touch .gitignore      //whatever file name we write into igtignore git will not track that file
+
+
+
+__________________________________________________________________________
+
+
+git remote add origin <repo link>     // to add remote repo
+
+git remote -v     // to check remote repo
+
+git branch -M master
+
+git push -u origin master    //to push branches in repo here master is branch name
+
+
+cat <fileName>     // tp check the file changes
+
+
