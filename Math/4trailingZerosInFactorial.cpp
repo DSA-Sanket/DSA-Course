@@ -8,7 +8,6 @@ int trailingZeros(int num){
         /* code */
         factorial = factorial * i;
     }
-    cout<<"factorial  "<<factorial<<endl;
     int trailingZeros = 0;
     while (factorial%10 == 0)
     {
@@ -19,7 +18,21 @@ int trailingZeros(int num){
     return trailingZeros;
     
 }
+//in case of factorials 2 and 5 together forms zeros so we will count pairs of 2 and 5
+    // 5 will be less than 2 so we will count number of 5 in the prime factorisation of the factorial number
+    // every 5th number have atleaset 1 prime factor like n/5 like 10/5 = 2 
+int efficientFactorialTrailingZeros(int num){
+    
+    int zeros = 0;
+    for (int i = 5; i <= num; i = i*5)
+    {
+        /* code */
+        zeros = zeros + (num/i);
+    }
+    return zeros;
+}
 int main(){
-    cout<<"The trailing zeros is : "<<trailingZeros(10)<<endl;
+    cout<<"The trailing zeros is : "<<trailingZeros(15)<<endl;
+    cout<<"Efficient "<<efficientFactorialTrailingZeros(15)<<endl; 
     return 0;
 }
