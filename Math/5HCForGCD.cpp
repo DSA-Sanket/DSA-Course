@@ -1,13 +1,15 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int hcf(int num1, int num2){
-    int minNum = min(num1,num2);
+int hcf(int num1, int num2)
+{
+    int minNum = min(num1, num2);
 
-    while (minNum>0)
+    while (minNum > 0)
     {
         /* code */
-        if(num1%minNum==0 && num2%minNum==0){
+        if (num1 % minNum == 0 && num2 % minNum == 0)
+        {
             break;
         }
         minNum--;
@@ -15,19 +17,30 @@ int hcf(int num1, int num2){
     return minNum;
 }
 
-int euclideanHCF(int a, int b){
+int euclideanHCF(int a, int b)
+{
     while (a != b)
     {
-        if(a>b)
-        a=a-b;
+        if (a > b)
+            a = a - b;
         else
-        b=b-a;
+            b = b - a;
     }
-    return a; 
+    return a;
 }
 
-int main(){
-    cout<<"HCF is  "<<hcf(56,100)<<endl;
-    cout<<"Efficient HCF "<<euclideanHCF(56,100)<<endl;
-    return 0 ;
+int optimizedEuclideanHCF(int a, int b)
+{
+    if (b == 0)
+        return a;
+    else
+        return optimizedEuclideanHCF(b, a % b);
+}
+
+int main()
+{
+    cout << "HCF is  " << hcf(56, 100) << endl;
+    cout << "Efficient HCF " << euclideanHCF(56, 100) << endl;
+    cout << "Efficient HCF " << optimizedEuclideanHCF(56, 100) << endl;
+    return 0;
 }
