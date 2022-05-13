@@ -39,7 +39,7 @@ int optimizedEuclideanHCF(int a, int b)
 
 int main()
 {
-    cout << "HCF is  " << hcf(56, 100) << endl;
+    cout << "HCF is  " << hcf(25, 100) << endl;
     cout << "Efficient HCF " << euclideanHCF(56, 100) << endl;
     cout << "Efficient HCF " << optimizedEuclideanHCF(56, 100) << endl;
     return 0;
