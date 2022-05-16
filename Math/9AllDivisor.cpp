@@ -23,12 +23,31 @@ void EAllDivisor(int n)
     }
 }
 
+void EAllDivisorsequentialy(int n)
+{
+    int i = 1;
+    for (i; i * i < n; i++)
+    {
+        if (n % i == 0)
+            cout << " " << i;
+    }
+    for (i; i >= 1; i--)
+    {
+        if (n % i == 0)
+            cout << " " << n / i;
+    }
+}
+
 int main()
 {
     cout << "All Divisor ";
-    allDivisor(50);
+    allDivisor(25);
 
     cout << endl
          << "EAll Divisor ";
-    EAllDivisor(50);
+    EAllDivisor(25);
+
+    cout << endl
+         << "EAll Divisor sequentialy ";
+    EAllDivisorsequentialy(25);
 }
