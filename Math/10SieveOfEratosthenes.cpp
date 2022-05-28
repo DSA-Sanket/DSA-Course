@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 bool isPrime(int n)
@@ -22,10 +23,33 @@ void printPrimeTill(int n)
             cout << " " << i;
 }
 
+void seive(int n)
+{
+    vector<bool> isPrime(n + 1, true);
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (isPrime[i])
+        {
+            for (int j = 2 * i; j <= n; j += i)
+            {
+                isPrime[j] = false;
+            }
+        }
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        if (isPrime[i])
+        {
+            cout << i << " ";
+        }
+    }
+}
+
 int main()
 {
     cout << "Prime Number till give numner n ";
-    printPrimeTill(25);
+    printPrimeTill(20);
     cout << endl
          << "Sieve Method to print prime number till given number " << endl;
+    seive(20);
 }
