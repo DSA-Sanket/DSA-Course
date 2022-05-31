@@ -45,6 +45,49 @@ void seive(int n)
     }
 }
 
+void seiveOptimised(int n)
+{
+    vector<bool> isPrime(n + 1, true);
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (isPrime[i])
+        {
+            for (int j = i * i; j <= n; j += i)
+            {
+                isPrime[j] = false;
+            }
+        }
+    }
+    for (int i = 2; i <= n; i++)
+    {
+        if (isPrime[i])
+        {
+            cout << i << " ";
+        }
+    }
+}
+
+void seiveBestAlgo(int n)
+{
+    vector<bool> isprime(n+1,true);
+
+    for (int i = 2; i <= n; i++)
+    {
+        if (isprime[i])
+        {
+            cout<<i<<" ";
+            for (int j = i*i; j <= n; j+=i)
+            {
+                isprime[j]= false;
+            }
+            
+        }
+        
+    }
+     
+}
+
+
 int main()
 {
     cout << "Prime Number till give numner n ";
@@ -52,4 +95,12 @@ int main()
     cout << endl
          << "Sieve Method to print prime number till given number " << endl;
     seive(20);
+
+        cout << endl
+         << "Sieve Method to print prime number till given number " << endl;
+    seiveOptimised(20);
+
+        cout << endl
+         << "Sieve Method to print prime number till given number Final " << endl;
+    seiveBestAlgo(20);
 }
