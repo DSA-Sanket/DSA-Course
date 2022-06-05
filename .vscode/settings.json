@@ -4,6 +4,7 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "algorithm": "cpp"
     }
 }
