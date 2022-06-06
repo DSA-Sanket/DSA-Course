@@ -1,19 +1,25 @@
 #include<iostream>
+#include<math.h>
 using namespace std;
 
 void powerSet(string s)
 {
-    for (int i = 0; i < s.length(); i++)
-    {
-        cout<<s[i];
-        for (int j = 0; j < s.length(); j++)
+    int size = s.length();
+    int powerSize = pow(2,size);
+
+    for (int counter = 0; counter < powerSize; counter++)
+    {       
+        for (int i = 0; i < size; i++)
         {
-            cout<<s[i]<<s[j];
-            
-            
+            if ((counter & (1<<i)) != 0)
+            {
+                cout<<s[i];
+            }
+            cout<<endl;
         }
         
     }
+    
     
 }
 
